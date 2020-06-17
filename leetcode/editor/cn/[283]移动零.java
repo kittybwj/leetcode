@@ -3,7 +3,10 @@
 // 示例: 
 //
 // 输入: [0,1,0,3,12]
-//输出: [1,3,12,0,0] 
+//输出: [1,3,12,0,0]
+//
+// 输入: [2,1]
+//输出: [2,1]
 //
 // 说明: 
 //
@@ -19,17 +22,17 @@
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public void moveZeroes(int[] nums) {
-      int j = 0;
+        int zeroFlag = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
-                if (i != j) {
-                    nums[j] = nums[i];
+                if (i != zeroFlag) {
+                    nums[zeroFlag] = nums[i];
                     nums[i] = 0;
                 }
-                j++;
+                zeroFlag++;
             }
         }
-    }
+}
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
@@ -59,3 +62,20 @@ class Solution {
 }
 */
 
+/*
+思路二：
+class Solution {
+    public void moveZeroes(int[] nums) {
+      int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+        if (nums[i] != 0) {
+            if (i != j) {
+                nums[j] = nums[i];
+                nums[i] = 0;
+            }
+            j++;
+        }
+    }
+}
+}
+*/
